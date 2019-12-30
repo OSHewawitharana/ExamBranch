@@ -1,0 +1,107 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 collapse d-md-flex bg-dark " id="sidebar">
+      <ul class="nav flex-column flex-nowrap" style="margin-top: 100px">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/addSubject']">Add Subject
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link py-0" href="">Add Postgraduate Exams</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="#">Add Undergraduate Exams</a>
+          </li> -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/createexam']">Add Upcoming Exams</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Current Semester</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Generate Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/allSubjects">View All Subjects</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
+    <div class="col pt-2">
+      <div class="container col-sm-11">
+        <h2 style="color: purple">
+          <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none">
+            <i class="fa fa-bars"></i>
+          </a>
+          <img src="http://www.nbqsa.org/wp-content/uploads/2014/08/UCSC-Logo-Better.jpg" class="img-fluid" alt="" style="block-size: 50px; "> University of Colombo School of Computing
+        </h2>
+        <h4>Course Modules</h4>
+
+
+
+
+        <table *ngIf="subjectlist" class="table table-hover">
+          <thead>
+            <tr class="table-info">
+              <th> Year </th>
+              <th> Subject Code </th>
+              <th> Subject Name </th>
+              <th> Course </th>
+              <th> Undergraduate/Postgraduate </th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let x of subjectlist">
+              <td>
+                <b>{{x.year}}</b>
+              </td>
+              <td>
+                <b>{{x.subjectCode}}</b>
+              </td>
+              <td>
+                <b>{{x.subjectName}}</b>
+              </td>
+              <td>
+                <b>{{x.course}}</b>
+              </td>
+              <td>
+                <b>{{x.studentType}}</b>
+              </td>
+              <td>
+                <b>{{x.semester}}</b>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

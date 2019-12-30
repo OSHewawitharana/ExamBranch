@@ -1,0 +1,49 @@
+<br>
+<br>
+
+<form (submit)="onRegisterSubmit()">
+
+
+  <fieldset>
+    <legend>Sign Up
+
+    </legend>
+
+    <div class="form-group">
+      <label for="email1">Email address</label><span style="color: red">*</span>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label><span style="color: red">*</span>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
+    </div>
+  </fieldset>
+
+
+  <div class="form-group">
+    <label for="fullname">Full Name</label><span style="color: red">*</span>
+    <input type="text" class="form-control" [(ngModel)]="fullname" name="fullname" placeholder="Enter your full name">
+  </div>
+
+  <div class="form-group">
+    <label for="uniId">University ID Number</label><span style="color: red">*</span>
+    <input type="text" class="form-control" [(ngModel)]="uniId" name="uniId" placeholder="Enter your University Identity Number">
+  </div>
+
+  <div class="form-group">
+    <label for="userType">User Type</label><span style="color: red">*</span>
+    <select class="form-control" [(ngModel)]="userType" name="userType">
+      <option disabled selected value="Select">Select</option>
+      <option value="Undergraduate">Undergraduate</option>
+      <option value="Postgraduate">Postgraduate</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+</form>

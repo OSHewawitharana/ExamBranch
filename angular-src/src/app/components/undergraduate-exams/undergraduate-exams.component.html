@@ -1,0 +1,86 @@
+<br>
+<br>
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-3 collapse d-md-flex bg-dark " id="sidebar">
+      <ul class="nav flex-column flex-nowrap" style="margin-top: 100px">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/allSubjects']">View Subject
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/fisrtYearUndergraduateSubjects']">Fisrt Year Undergraduate Subjects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link py-0" [routerLink]="['/secondYearUndergraduateSubjects']">Second Year Undergraduate Subjects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/thirdYearUndergraduateSubjects']">Third Year Undergraduate Subjects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link py-0" [routerLink]="['/fourthYearUndergraduateSubjects']">Fourth Year Undergraduate Subjects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/upcomingExams']">View All Upcoming Exams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/undergraduateExams']">Undergraduate Exams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/postgraduateExams']">Postgraduate Exams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Enroll</a>
+        </li>
+      </ul>
+    </div> -->
+<div class="col pt-2">
+  <div class="container col-sm-11">
+    <h2 style="color: darkblue">
+      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none">
+        <i class="fa fa-bars"></i>
+      </a>
+      University of Colombo School of Computing
+    </h2>
+    <h4 class="hidden-sm-down">Undergraduate Exams</h4>
+
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container" *ngIf="examlist">
+  <div *ngFor="let x of examlist" class="card mb-3">
+    <div class="card-header">
+      <b>{{x.semester}} Semester Examination for {{x.year}} Year Students</b>
+      <br>
+
+      <div *ngIf="user">
+
+        by : {{user.email}} (Admin) - {{x.date}}
+
+      </div>
+
+    </div>
+    <div class="card-body">
+      <h6 style="color: maroon">Deadline: {{x.deadline}}</h6>
+      {{x.description}}.
+      <br>
+      <div class="container" style="padding-left: 830px ">
+        <button type="button" class="btn btn-outline-primary btn-rounded waves-effect" (click)="onExamEnroll(x.year,x.semester,x.examination)">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- </div>
+      </div>
+    </div>
+  </div>
+</div> -->

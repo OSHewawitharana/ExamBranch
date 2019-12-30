@@ -1,0 +1,79 @@
+<br>
+<br>
+<form (submit)="onEnroll()">
+
+    <div *ngIf="exam">
+        <ul class="list-group">
+
+            <li class="list-group-item" >Examination: {{exam.examination}}
+            </li>
+
+        </ul>
+    </div>
+
+    <div *ngIf="user">
+        <ul class="list-group">
+
+            <li class="list-group-item">Full Name: {{user.fullname}}
+            </li>
+
+            <li class="list-group-item">University Identity Number: {{user.uniId}}
+            </li>
+        </ul>
+    </div>
+
+
+    <br>
+    <br>
+
+    <div class="form-group">
+        <label for="indexno">Index Number</label>
+        <input type="text" class="form-control" [(ngModel)]="indexno" name="indexno" placeholder="Index Number">
+    </div>
+
+
+
+    <!-- <div class="form-group">
+        <label for="semester">Semester</label>
+        <select class="form-control" [(ngModel)]="semester" name="semester" id="semester">
+            <option disabled selected value="Select">Select</option>
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+        </select>
+    </div> -->
+
+    <div class="form-group">
+        <label for="noofsubjects">No of Subjects</label>
+        <input type="text" class="form-control" [(ngModel)]="noofsubjects" name="noofsubjects" placeholder="Enter Number of Subjects">
+    </div>
+
+
+    <!-- <div class="form-group">
+            <label for="subjects">Subject Codes</label>
+            <textarea class="form-control" [(ngModel)]="subjectCodes" name="subjectCodes" rows="3" placeholder="SCS1101,SCS1102,SCS1103"></textarea>
+          </div> -->
+   
+
+
+
+
+    <div class="form-group" *ngIf="subjectlist">
+
+        <label for="subjects">Select Subjects</label>
+
+        <div *ngFor="let x of subjectlist" class="form-check">
+            <label class="form-check-label">
+           <input class="form-check-input" type="checkbox" value="x.subjectCode" (click)="check(x.subjectCode, x.subjectName)">
+           {{x.subjectCode}}   {{x.subjectName}}
+           
+            </label>
+        </div>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+
+
+</form>

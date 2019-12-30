@@ -1,0 +1,27 @@
+<br>
+<br>
+
+
+<div class="form-group" *ngIf="subjectlist">
+    <!-- <li class="list-group-item">  {{x.subject}}
+      </li> -->
+
+    
+        <div *ngFor="let x of subjectlist" class="form-group">
+        <li class="list-group-item" style="margin-bottom: 25px">Uni Id: {{ x.uniId}}</li>
+        <li class="list-group-item" style="margin-bottom: 25px">Year: {{ x.year}}</li>
+        <li class="list-group-item" style="margin-bottom: 25px">Semester: {{ x.semester}}</li>
+       
+        <!-- <div *ngFor="let y of subjectlist.subjects" class="form-group">
+ <li class="list-group-item" style="margin-bottom: 25px">subjects: {{y.subject}}</li>
+ </div> -->
+
+ <li class="list-group-item" style="margin-bottom: 25px">subjects: {{x.subjects}}</li>
+            
+
+
+
+        </div>
+    
+
+</div>

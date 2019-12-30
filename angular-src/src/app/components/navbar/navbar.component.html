@@ -1,0 +1,163 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="http://www.nbqsa.org/wp-content/uploads/2014/08/UCSC-Logo-Better.jpg" class="img-fluid" alt="" style="block-size: 30px; border-radius: 50%; ">
+                   
+    <a class="navbar-brand" href="#"> Online Exam Registration Center</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+
+            <li *ngIf="authService.loggedIn() && !authService.isAdminLogged()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/']" class="nav-link">Home</a>
+            </li>
+
+            <!-- <li *ngIf="!authService.loggedIn() && !authService.isAdminLogged()" class="nav-item " [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/dashboard']" class="nav-link">Dashboard</a>
+            </li> -->
+            <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/profile']" class="nav-link">Profile</a>
+            </li>
+
+            <li *ngIf="authService.isAdminLogged()" class="nav-item " [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/adminDashboard']" class="nav-link ">Admin Dashboard</a>
+            </li>
+
+            <!-- <li *ngIf="!authService.loggedIn()&& !authService.isAdminLogged() " class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a  [routerLink]="['/registeredSubjects']" class="nav-link">View Registered Subjects</a>
+            </li> -->
+            <li *ngIf="!authService.loggedIn() && !authService.isAdminLogged()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/repeatExams']" class="nav-link">Repeat Exams</a>
+            </li>
+            <!-- <li *ngIf="!authService.loggedIn()&& !authService.isAdminLogged()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/repeatView']" class="nav-link">Repeat Registration View</a>
+                </li> -->
+
+                <li class=" nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a  [routerLink]="['/registeredSubjects']" class="nav-link">View Registered Subjects</a>
+                    </li>
+
+            <li *ngIf="!authService.loggedIn() && !authService.isAdminLogged()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown">View Subjects
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+
+
+                    <li class="dropdown-submenu nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown">Undergraduate</a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" [routerLink]="['/fisrtYearUndergraduateSubjects']">First Year </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" [routerLink]="['/secondYearUndergraduateSubjects']">Second Year</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" [routerLink]="['/thirdYearUndergraduateSubjects']">Third Year</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" [routerLink]="['/fourthYearUndergraduateSubjects']">Fourth Year</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-submenu nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a href="#" class="dropdown-toggle dropdown-item" data-toggle="dropdown">Postgraduate</a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="#" class="dropdown-item">First Year </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Second Year</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Third Year</a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown-item">Fourth Year</a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                </ul>
+            </li>
+
+
+
+
+
+           
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+            <li *ngIf="!authService.loggedIn() && !authService.isAdminLogged()" class="nav-item dropdown" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Exams</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a [routerLink]="['/undergraduateExams']" class="dropdown-item">Undergraduate</a>
+
+                    <a [routerLink]="['/postgraduateExams']" class="dropdown-item">Postgraduate</a>
+                   
+                </div>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/login']" class="nav-link">Login</a>
+            </li>
+            <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/register']" class="nav-link">Register</a>
+            </li>
+
+
+
+            <li class="nav-item" *ngIf="!authService.loggedIn() || authService.isAdminLogged()">
+                <a (click)="onLogoutClick()" class="nav-link" href="#">LogOut</a>
+            </li>
+
+
+        </ul>
+
+
+    </div>
+</nav>

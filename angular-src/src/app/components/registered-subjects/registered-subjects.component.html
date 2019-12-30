@@ -1,0 +1,58 @@
+<!-- <br>
+<br>
+
+
+<div class="form-group" *ngIf="subjectlist">
+       
+
+    <li class="list-group-item" style="margin-bottom: 25px">Uni id {{subjectlist.uniId}}</li>
+
+
+    <h5 style="margin-bottom: 25px">Selected Subjects</h5>
+
+        <div *ngFor="let x of subjectlist.subjects" class="form-group">
+            <li class="list-group-item"> {{x.code}} {{x.subject}}
+            </li>
+            
+        </div>
+    
+
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+<div class="form-group" *ngIf="subjectlist">
+    <!-- <h5 style="margin-bottom: 25px">University Identity Number</h5> -->
+
+
+
+    <div *ngFor="let y of subjectlist" class="form-group">
+        <div class="card p-5 m-5">
+            <h5 >Examination</h5>
+            <li class="list-group-item" style="margin-bottom: 25px"> {{y.examname}}</li>
+            <h5>University Identity Number</h5>
+            <li class="list-group-item" style="margin-bottom: 25px">{{y.uniId}}</li>
+
+            <h5>Selected Subjects</h5>
+
+            <div *ngFor="let x of y.subjects" class="form-group">
+                <li class="list-group-item"> {{x.code}} {{x.subject}}
+                </li>
+
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
